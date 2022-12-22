@@ -8,12 +8,67 @@
     <link rel="stylesheet" href="{ % static 'css/forms.css' % }">
     <title>Document</title>
 </head>
-<body>
-        <form action="" method="POST" style="margin: 30px auto; max-width: 600px;"> {% csrf_token %}
-            {{form.as_p}}
-            <input type="Submit" value="Submit" style="  background-color: #4CAF50; /* Green */;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block; font-size: 16px;">
-            <h1>The sentiment was {{output}}</h1>
+<style>
+    .container{
+        margin: 30px auto; 
+        max-width: 968px;
+    }
+    .productImg{
+        width: 300px; 
+        height: 300px; 
+        position: relative;
+    }
+    button{
+      display:block;
+      color: white;
+      padding:0.5em 1em 0.5em 1em;
+      border-radius:5px;
+      border:none;
+      font-size:12px;
+      position:relative;
+      background:#5689e7;
+      cursor:pointer;
+      height:3em;
+      width:10em;
+      overflow:hidden;
+      transition:transform 0.1s;
+      z-index:1;
+    }
+    .pinfo {
+      margin: 8px auto;
+      font-weight: bold;
+      line-height: 1.5;
+      color: #0d0d0d;
+    }
 
-        </form>
+</style>
+<body>
+  <div class="container">
+    <div class="heading">
+        <h1>Review the product</h1>
+    </div>
+    <div class="body">
+        <div class="productImg">
+            <img src="{% static 'image.jpg' %}" alt="" srcset="" style="width: 100%;">
+        </div>
+        <div class="productDesc">
+            <h4>American Knife</h4>
+            <h5>Price: $300</h5>
+            <button>Add to Cart</button>
+        </div>
+        <hr>
+        <div class="reviewArea">
+          <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
+            {{form.as_p}}
+            <input type="Submit" value="Submit Review" style="background-color: #4CAF50; /* Green */;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block; font-size: 16px;">
+            
+          </form>
+        </div>
+        <div class="sentimentFeedback">
+          <p>Your Review was {{output}}, thank you for you comment.</p>
+        </div>
+    </div>
+  </div>
+        
 </body>
 </html>

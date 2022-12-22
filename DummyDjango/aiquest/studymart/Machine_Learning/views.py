@@ -111,8 +111,8 @@ def showFormData(request):
         print(fm)
         formData = fm.cleaned_data
 
-        print(formData['input_string'])
-        outputStr = result(formData['input_string'])
+        print(formData['write_Review'])
+        outputStr = result(formData['write_Review'])
     else:
         fm = UserInput()
     return render(request, 'ml/userInput.html', {'form': fm, 'output': outputStr})
