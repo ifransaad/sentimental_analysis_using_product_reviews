@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-{ % load static % }
 <html lang="en">
 <head>
+    {%load static%}
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{ % static 'css/forms.css' % }">
+    <link rel="stylesheet" href="{%static 'css/forms.css'%}">
     <title>Document</title>
 </head>
 <style>
@@ -14,9 +14,9 @@
         max-width: 968px;
     }
     .productImg{
-        width: 300px; 
-        height: 300px; 
-        position: relative;
+      width: 300px; 
+      height: 300px; 
+      position: relative;
     }
     button{
       display:block;
@@ -49,7 +49,7 @@
     </div>
     <div class="body">
         <div class="productImg">
-            <img src="{ % static 'css/knife.png' % }" alt="" srcset="" style="width: 100%;">
+            <img src="{%static 'knife.png'%}" alt="" srcset="" style="width: 100%;">
         </div>
         <div class="productDesc">
             <h4>American Knife</h4>
@@ -60,7 +60,20 @@
         <div class="reviewArea">
           <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
             {{form.as_p}}
-            <input type="Submit" value="Submit Review" style="background-color: #4CAF50; /* Green */;border: none;color: white;padding: 15px 32px;text-align: center;text-decoration: none;display: inline-block; font-size: 16px;">
+            <input type="Submit" value="Submit Review" style="display:block;
+            color: white;
+            padding:0.5em 1em 0.5em 1em;
+            border-radius:5px;
+            border:none;
+            font-size:12px;
+            position:relative;
+            background:#5689e7;
+            cursor:pointer;
+            height:3em;
+            width:10em;
+            overflow:hidden;
+            transition:transform 0.1s;
+            z-index:1;">
             
           </form>
         </div>
