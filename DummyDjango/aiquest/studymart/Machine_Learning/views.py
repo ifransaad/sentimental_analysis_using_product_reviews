@@ -103,7 +103,8 @@ from . forms import UserInput
 #         outputStr = 'negative'
 #     return outputStr
     
-
+def homePage(request):
+    return render(request, "ml/index.html")
 
 def showFormData(request):
     outputStr = ""
@@ -124,8 +125,19 @@ def showFormData(request):
             outputStr = 'negative'
     else:
         fm = UserInput()
-    return render(request, 'ml/userInput.html', {'form': fm, 'output': outputStr})
+    return {'form': fm, 'output': outputStr}
+    # return render(request, 'ml/userInput.html', {'form': fm, 'output': outputStr})
 
+
+def knifeItem(request):
+    return render(request, "ml/userInput.html", showFormData(request))
+
+
+def tableItem(request):
+    return render(request, "ml/table.html", showFormData(request))
+
+def chairItem(request):
+    return render(request, "ml/chair.html", showFormData(request))
 
 # result('haba')
 
