@@ -94,18 +94,6 @@
                     </div>
                 </div>
 	        </div>
-
-        <hr>
-        <div class="reviewArea">
-          <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
-            {{form.as_p}}
-            <input type="Submit" value="Submit Review" class="btn btn-primary">
-            
-          </form>
-        </div>
-        <div class="sentimentFeedback mt-3">
-          <p>Your Review was {{output}}, thank you for you comment.</p>
-        </div>
     </div>
   </div>
         
