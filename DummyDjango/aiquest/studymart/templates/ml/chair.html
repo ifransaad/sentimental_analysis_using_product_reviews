@@ -36,9 +36,6 @@
                 </div>
             </div>
         </nav>
-    <div class="heading">
-        <h1>Review the product</h1>
-    </div>
     <div class="body">
             <!-- <div class="productImg">
                 <img src="{%static 'assets/images/chair.png'%}" alt="" srcset="" style="width: 100%;">
@@ -49,6 +46,9 @@
                 <button class="btn btn-primary">Add to Cart</button>
             </div> -->
         	<div class="container">
+                <div class="heading">
+                    <h1>Product Review</h1>
+                </div>
                 <div class="reviewArea">
                     <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
                         {{form.as_p}}
