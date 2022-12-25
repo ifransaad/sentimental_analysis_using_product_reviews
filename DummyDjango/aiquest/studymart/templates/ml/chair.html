@@ -45,18 +45,9 @@
                 <h5>Price: $1500</h5>
                 <button class="btn btn-primary">Add to Cart</button>
             </div> -->
-        	<div class="container">
+        	<div class="container mb-3">
                 <div class="heading">
                     <h1>Product Review</h1>
-                </div>
-                <div class="reviewArea">
-                    <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
-                        {{form.as_p}}
-                        <input type="Submit" value="Submit Review" class="btn btn-primary">
-                    </form>
-                </div>
-                <div class="sentimentFeedback mt-3">
-                    <p style="font-size: 20px;">Your Review was {{output}} <br>Thank you for you comment.</p>
                 </div>
                 <div class="card">
                     <div class="container-fliud">
@@ -99,6 +90,15 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="reviewArea">
+                    <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="Submit" value="Submit Review" class="btn btn-primary">
+                    </form>
+                </div>
+                <div class="sentimentFeedback mt-3">
+                    <p style="font-size: 20px;">Your Review was {{output}} <br>Thank you for you comment.</p>
                 </div>
 	        </div>
     </div>

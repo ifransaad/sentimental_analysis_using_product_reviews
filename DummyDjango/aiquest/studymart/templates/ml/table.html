@@ -42,16 +42,8 @@
                 <div class="heading">
                     <h1>Product Review</h1>
                 </div>
-                <div class="reviewArea">
-                    <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
-                        {{form.as_p}}
-                        <input type="Submit" value="Submit Review" class="btn btn-primary">
-                    </form>
-                </div>
-                <div class="sentimentFeedback mt-3">
-                    <p>Your Review was {{output}} <br>Thank you for you comment.</p>
-                </div>
-                <div class="card">
+                
+                <div class="card mb-3">
                     <div class="container-fliud">
                         <div class="wrapper row">
                             <div class="preview col-md-6">
@@ -92,6 +84,15 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="reviewArea">
+                    <form action="" method="POST" style="max-width: 600px;"> {% csrf_token %}
+                        {{form.as_p}}
+                        <input type="Submit" value="Submit Review" class="btn btn-primary">
+                    </form>
+                </div>
+                <div class="sentimentFeedback mt-3">
+                    <p>Your Review was {{output}} <br>Thank you for you comment.</p>
                 </div>
 	        </div>
     </div>
