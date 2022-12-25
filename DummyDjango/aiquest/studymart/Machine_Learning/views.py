@@ -128,10 +128,11 @@ def showFormData(request):
     return {'form': fm, 'output': outputStr}
     # return render(request, 'ml/userInput.html', {'form': fm, 'output': outputStr})
 
+def indexBlog(request):
+    return render(request, "blogs/index.html")
 
 def knifeItem(request):
     return render(request, "ml/userInput.html", showFormData(request))
-
 
 def tableItem(request):
     return render(request, "ml/table.html", showFormData(request))
