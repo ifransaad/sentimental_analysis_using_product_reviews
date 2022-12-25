@@ -109,6 +109,7 @@ def homePage(request):
 def showFormData(request):
     outputStr = ""
     prediction = ''
+    emoji = ''
     if request.method == 'POST':
         fm = UserInput(request.POST)
         print(fm)
@@ -119,17 +120,24 @@ def showFormData(request):
         prediction = MachineLearningConfig.model.predict(vector)[0]
         if (prediction == 1):
             outputStr = 'positive'
+            emoji = '&#128516'
         elif (prediction == 0):
             outputStr = 'neutral'
+            emoji = '&#128528'
         else:
             outputStr = 'negative'
+            emoji = '&#128532'
     else:
         fm = UserInput()
-    return {'form': fm, 'output': outputStr}
+    return {'form': fm, 'output': outputStr, 'emoji': emoji}
     # return render(request, 'ml/userInput.html', {'form': fm, 'output': outputStr})
 
 def indexBlog(request):
     return render(request, "blogs/index.html")
+
+
+def productsBlog(request):
+    return render(request, "blogs/products.html")
 
 def knifeItem(request):
     return render(request, "ml/userInput.html", showFormData(request))
